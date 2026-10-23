@@ -1,0 +1,15 @@
+# gerados
+build/
+.pio/
+__pycache__/
+
+# dependências locais
+node_modules/
+package-lock.json
+.venv/
+
+# sistema
+.DS_Store
+
+# material que não vai para o GitHub (planejamento interno, imagens descartadas)
+_fora-do-repo/

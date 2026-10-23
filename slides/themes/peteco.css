@@ -1,0 +1,650 @@
+/* @theme peteco */
+
+/*
+ * Tema Marp do PETECO — PET Engenharia de Computação, UTFPR
+ * ----------------------------------------------------------
+ * Paleta baseada na identidade do grupo (preto + amarelo).
+ * Para usar:  marp --theme-set themes/ arquivo.md
+ *
+ * Classes disponíveis (use `<!-- _class: nome -->` no slide):
+ *   lead      → slide de capa
+ *   section   → divisória entre partes da aula
+ *   dark      → fundo escuro (bom para código e para destaque)
+ *   alert     → slide de atenção/armadilha (borda amarela)
+ *   center    → conteúdo centralizado vertical e horizontalmente
+ *   cols      → duas colunas (ver README)
+ *   tight     → reduz a fonte quando o slide tem muito conteúdo
+ *   end       → slide de encerramento
+ */
+
+@import 'default';
+
+:root {
+  /* Identidade */
+  --peteco-amarelo: #f5c400;
+  --peteco-amarelo-claro: #ffe27a;
+  --peteco-preto: #14161a;
+  --peteco-cinza: #5b6270;
+  --peteco-cinza-claro: #e6e8ec;
+  --peteco-fundo: #ffffff;
+  --peteco-fundo-alt: #f7f8fa;
+  --peteco-perigo: #c8102e;
+  --peteco-ok: #1f8a4c;
+
+  /* Tipografia */
+  --fonte-texto: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --fonte-codigo: "JetBrains Mono", "Fira Code", "Cascadia Code", "Consolas", monospace;
+}
+
+/* --------------------------------------------------------------
+   Base
+   -------------------------------------------------------------- */
+
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 64px 72px 72px 72px;
+  font-family: var(--fonte-texto);
+  font-size: 25px;
+  line-height: 1.45;
+  color: var(--peteco-preto);
+  background: var(--peteco-fundo);
+  letter-spacing: -0.005em;
+
+  /* faixa amarela fina no topo, marca do tema */
+  background-image: linear-gradient(var(--peteco-amarelo), var(--peteco-amarelo));
+  background-size: 100% 8px;
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+section > *:first-child {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------
+   Títulos
+   -------------------------------------------------------------- */
+
+h1 {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 28px 0;
+  color: var(--peteco-preto);
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 750;
+  line-height: 1.15;
+  margin: 0 0 24px 0;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--peteco-amarelo);
+  color: var(--peteco-preto);
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 26px 0 10px 0;
+  color: var(--peteco-preto);
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 20px 0 8px 0;
+  color: var(--peteco-cinza);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* --------------------------------------------------------------
+   Texto, listas, links
+   -------------------------------------------------------------- */
+
+p {
+  margin: 0 0 16px 0;
+}
+
+ul,
+ol {
+  margin: 0 0 16px 0;
+  padding-left: 1.15em;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li::marker {
+  color: var(--peteco-amarelo);
+  font-weight: 700;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 0.9em;
+  color: var(--peteco-cinza);
+}
+
+ul ul li::marker {
+  color: var(--peteco-cinza);
+}
+
+strong {
+  font-weight: 750;
+}
+
+em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--peteco-cinza);
+}
+
+a {
+  color: #1155cc;
+  text-decoration: none;
+  border-bottom: 2px solid var(--peteco-amarelo);
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--peteco-cinza-claro);
+  margin: 26px 0;
+}
+
+/* --------------------------------------------------------------
+   Código
+   -------------------------------------------------------------- */
+
+code {
+  font-family: var(--fonte-codigo);
+  font-size: 0.86em;
+  background: var(--peteco-cinza-claro);
+  color: #24292f;
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
+pre {
+  background: var(--peteco-preto);
+  border-radius: 10px;
+  padding: 22px 26px;
+  margin: 0 0 18px 0;
+  font-size: 21px;
+  line-height: 1.42;
+  overflow: visible;
+  border-left: 5px solid var(--peteco-amarelo);
+}
+
+pre code {
+  background: transparent;
+  color: #e6e8ec;
+  padding: 0;
+  font-size: inherit;
+  text-shadow: none;
+}
+
+/* realce de sintaxe (Prism) ajustado ao fundo escuro */
+pre code .token.comment { color: #8b93a1; font-style: italic; }
+pre code .token.keyword { color: #f5c400; font-weight: 600; }
+pre code .token.string { color: #9ae08a; }
+pre code .token.number { color: #ffb86c; }
+pre code .token.function { color: #7fd3ff; }
+pre code .token.punctuation { color: #c9cdd6; }
+pre code .token.operator { color: #f0f2f5; background: transparent; }
+pre code .token.macro,
+pre code .token.directive { color: #d9a7ff; }
+pre code .token.class-name { color: #7fd3ff; }
+
+/* --------------------------------------------------------------
+   Tabelas
+   -------------------------------------------------------------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82em;
+  margin: 0 0 18px 0;
+}
+
+table th {
+  background: var(--peteco-preto);
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  padding: 11px 14px;
+  border: none;
+}
+
+table td {
+  padding: 10px 14px;
+  border: none;
+  border-bottom: 1px solid var(--peteco-cinza-claro);
+}
+
+table tr:nth-child(even) td {
+  background: var(--peteco-fundo-alt);
+}
+
+/* --------------------------------------------------------------
+   Citações — usadas como "caixa de recado"
+   -------------------------------------------------------------- */
+
+blockquote {
+  margin: 0 0 18px 0;
+  padding: 18px 24px;
+  background: var(--peteco-fundo-alt);
+  border-left: 5px solid var(--peteco-amarelo);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.92em;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote strong {
+  color: var(--peteco-preto);
+}
+
+/* --------------------------------------------------------------
+   Rodapé, cabeçalho e paginação
+   -------------------------------------------------------------- */
+
+header {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--peteco-cinza);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  top: 28px;
+  left: 72px;
+}
+
+footer {
+  font-size: 16px;
+  color: var(--peteco-cinza);
+  bottom: 28px;
+  left: 72px;
+}
+
+section::after {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--peteco-cinza);
+  bottom: 26px;
+  right: 72px;
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+}
+
+/* --------------------------------------------------------------
+   Imagens
+   -------------------------------------------------------------- */
+
+img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* imagens marcadas com `![sem-borda](...)` ficam sem arredondamento */
+img[alt~="sem-borda"] {
+  border-radius: 0;
+}
+
+/* --------------------------------------------------------------
+   Classe: lead — slide de capa
+   -------------------------------------------------------------- */
+
+section.lead {
+  background: var(--peteco-preto);
+  background-image: linear-gradient(var(--peteco-amarelo), var(--peteco-amarelo));
+  background-size: 100% 14px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 90px;
+}
+
+section.lead h1 {
+  color: #ffffff;
+  font-size: 64px;
+  margin-bottom: 14px;
+}
+
+section.lead h2 {
+  color: var(--peteco-amarelo);
+  font-size: 30px;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+section.lead h3 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0;
+}
+
+section.lead p {
+  color: #b9bfcb;
+  font-size: 21px;
+}
+
+section.lead strong {
+  color: var(--peteco-amarelo);
+}
+
+section.lead::after {
+  content: "";
+}
+
+section.lead code {
+  background: #2a2e37;
+  color: var(--peteco-amarelo-claro);
+}
+
+/* --------------------------------------------------------------
+   Classe: section — divisória entre partes
+   -------------------------------------------------------------- */
+
+section.section {
+  background: var(--peteco-amarelo);
+  background-image: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 90px;
+}
+
+section.section h1 {
+  font-size: 58px;
+  margin-bottom: 12px;
+}
+
+section.section h2 {
+  border: none;
+  padding: 0;
+  font-size: 26px;
+  font-weight: 600;
+  color: #4a4310;
+  margin: 0;
+}
+
+section.section h4 {
+  color: #4a4310;
+  margin-bottom: 8px;
+}
+
+section.section::after {
+  color: #4a4310;
+}
+
+/* --------------------------------------------------------------
+   Classe: dark — fundo escuro
+   -------------------------------------------------------------- */
+
+section.dark {
+  background: var(--peteco-preto);
+  color: #e6e8ec;
+}
+
+section.dark h1,
+section.dark h2,
+section.dark h3 {
+  color: #ffffff;
+}
+
+section.dark h2 {
+  border-bottom-color: var(--peteco-amarelo);
+}
+
+section.dark h4 {
+  color: var(--peteco-amarelo);
+}
+
+section.dark strong {
+  color: var(--peteco-amarelo);
+}
+
+section.dark em {
+  color: #a8b0bd;
+}
+
+section.dark code {
+  background: #2a2e37;
+  color: var(--peteco-amarelo-claro);
+}
+
+section.dark pre {
+  background: #05070a;
+  border-left-color: var(--peteco-amarelo);
+}
+
+section.dark blockquote {
+  background: #22262e;
+  color: #e6e8ec;
+}
+
+section.dark blockquote strong {
+  color: var(--peteco-amarelo);
+}
+
+section.dark table td {
+  border-bottom-color: #2f343d;
+}
+
+section.dark table tr:nth-child(even) td {
+  background: #1c1f26;
+}
+
+section.dark table th {
+  background: var(--peteco-amarelo);
+  color: var(--peteco-preto);
+}
+
+section.dark::after,
+section.dark header,
+section.dark footer {
+  color: #8b93a1;
+}
+
+/* --------------------------------------------------------------
+   Classe: alert — armadilha / atenção
+   -------------------------------------------------------------- */
+
+section.alert {
+  background: #fffbe8;
+  border-left: 16px solid var(--peteco-amarelo);
+  background-image: none;
+}
+
+section.alert h2 {
+  border-bottom-color: var(--peteco-preto);
+}
+
+section.alert strong {
+  color: #8a6d00;
+}
+
+/* --------------------------------------------------------------
+   Classe: center — tudo centralizado
+   -------------------------------------------------------------- */
+
+section.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.center h2 {
+  border: none;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------
+   Classe: cols — duas colunas
+   Uso no markdown:
+     <div class="cols"><div>
+
+     coluna da esquerda
+
+     </div><div>
+
+     coluna da direita
+
+     </div></div>
+   -------------------------------------------------------------- */
+
+section .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+section .cols-1-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 36px;
+  align-items: start;
+}
+
+section .cols-2-1 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+section .cols > div > *:first-child,
+section .cols-1-2 > div > *:first-child,
+section .cols-2-1 > div > *:first-child {
+  margin-top: 0;
+}
+
+/* --------------------------------------------------------------
+   Classe: tight — para slides com muito conteúdo
+   -------------------------------------------------------------- */
+
+section.tight {
+  font-size: 21px;
+}
+
+section.tight h2 {
+  font-size: 33px;
+  margin-bottom: 18px;
+}
+
+section.tight pre {
+  font-size: 17px;
+  padding: 16px 20px;
+}
+
+section.tight table {
+  font-size: 0.78em;
+}
+
+section.tight li {
+  margin-bottom: 6px;
+}
+
+/* --------------------------------------------------------------
+   Classe: end — encerramento
+   -------------------------------------------------------------- */
+
+section.end {
+  background: var(--peteco-preto);
+  background-image: linear-gradient(var(--peteco-amarelo), var(--peteco-amarelo));
+  background-size: 100% 14px;
+  background-repeat: no-repeat;
+  background-position: top left;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.end h1 {
+  color: #ffffff;
+  font-size: 58px;
+}
+
+section.end h2 {
+  border: none;
+  padding: 0;
+  color: var(--peteco-amarelo);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+section.end p {
+  color: #b9bfcb;
+}
+
+section.end a {
+  color: var(--peteco-amarelo);
+  border-bottom-color: #5b6270;
+}
+
+section.end::after {
+  content: "";
+}
+
+/* --------------------------------------------------------------
+   Utilitários pontuais
+   -------------------------------------------------------------- */
+
+.destaque {
+  color: var(--peteco-perigo);
+  font-weight: 700;
+}
+
+.ok {
+  color: var(--peteco-ok);
+  font-weight: 700;
+}
+
+.pequeno {
+  font-size: 0.82em;
+  color: var(--peteco-cinza);
+}
+
+.legenda {
+  font-size: 0.74em;
+  color: var(--peteco-cinza);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* marca-d'água opcional: logo no canto inferior direito.
+   Ative com `<!-- _class: logo -->` depois de ajustar o caminho. */
+section.logo::before {
+  content: "";
+  position: absolute;
+  right: 64px;
+  bottom: 52px;
+  width: 132px;
+  height: 54px;
+  background-image: url('../assets/logo-peteco.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  opacity: 0.55;
+}

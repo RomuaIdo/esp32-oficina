@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="880" height="440" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">MQTT &#8212; ninguém fala com ninguém, todos falam com o broker</text>
+
+  <defs>
+    <marker id="mp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#14161a"/>
+    </marker>
+    <marker id="ms" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f8a4c"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Broker ===== -->
+  <rect x="330" y="140" width="220" height="130" rx="10" fill="#14161a"/>
+  <text x="440" y="176" text-anchor="middle" fill="#f5c400" font-size="18" font-weight="700">BROKER</text>
+  <text x="440" y="200" text-anchor="middle" fill="#8b93a1" font-size="13">Mosquitto</text>
+  <text x="440" y="226" text-anchor="middle" fill="#ffffff" font-size="13">recebe e redistribui</text>
+  <text x="440" y="248" text-anchor="middle" fill="#8b93a1" font-size="12">porta 1883</text>
+
+  <!-- ===== Publicadores (esquerda) ===== -->
+  <text x="150" y="80" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">publicam</text>
+
+  <rect x="52" y="98" width="196" height="54" rx="8" fill="#ffffff" stroke="#14161a" stroke-width="2.5"/>
+  <text x="150" y="122" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">ESP32 da bancada 1</text>
+  <text x="150" y="142" text-anchor="middle" fill="#5b6270" font-size="12">peteco/b1/temperatura</text>
+
+  <rect x="52" y="168" width="196" height="54" rx="8" fill="#ffffff" stroke="#14161a" stroke-width="2.5"/>
+  <text x="150" y="192" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">ESP32 da bancada 2</text>
+  <text x="150" y="212" text-anchor="middle" fill="#5b6270" font-size="12">peteco/b2/temperatura</text>
+
+  <path d="M248 125 H 290 V 180 H 326" fill="none" stroke="#14161a" stroke-width="2.5" marker-end="url(#mp)"/>
+  <path d="M248 195 H 290 V 200 H 326" fill="none" stroke="#14161a" stroke-width="2.5" marker-end="url(#mp)"/>
+
+  <!-- ===== Assinantes (direita) ===== -->
+  <text x="730" y="80" text-anchor="middle" fill="#1f8a4c" font-size="14" font-weight="700">assinam</text>
+
+  <rect x="632" y="98" width="196" height="54" rx="8" fill="#ffffff" stroke="#1f8a4c" stroke-width="2.5"/>
+  <text x="730" y="122" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">painel no notebook</text>
+  <text x="730" y="142" text-anchor="middle" fill="#1f8a4c" font-size="12">peteco/+/temperatura</text>
+
+  <rect x="632" y="168" width="196" height="54" rx="8" fill="#ffffff" stroke="#1f8a4c" stroke-width="2.5"/>
+  <text x="730" y="192" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">app no celular</text>
+  <text x="730" y="212" text-anchor="middle" fill="#1f8a4c" font-size="12">peteco/#</text>
+
+  <path d="M554 180 H 594 V 125 H 628" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#ms)"/>
+  <path d="M554 200 H 594 V 195 H 628" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#ms)"/>
+
+  <!-- ===== Comando de volta ===== -->
+  <rect x="52" y="246" width="196" height="54" rx="8" fill="#ffffff" stroke="#8a6d00" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <text x="150" y="268" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">ESP32 da bancada 1 <tspan font-weight="400" fill="#5b6270" font-size="12">(a mesma)</tspan></text>
+  <text x="150" y="289" text-anchor="middle" fill="#8a6d00" font-size="12">assina peteco/b1/led</text>
+  <path d="M326 240 H 290 V 273 H 252" fill="none" stroke="#8a6d00" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#mp)"/>
+  <text x="300" y="320" text-anchor="middle" fill="#8a6d00" font-size="12" font-weight="700">o mesmo caminho,</text>
+  <text x="300" y="336" text-anchor="middle" fill="#8a6d00" font-size="12" font-weight="700">na volta: comando</text>
+
+  <!-- ===== Curingas ===== -->
+  <rect x="592" y="256" width="258" height="92" rx="8" fill="#f7f8fa" stroke="#c9cdd6" stroke-width="2"/>
+  <text x="612" y="282" fill="#14161a" font-size="14" font-weight="700">Curingas na assinatura</text>
+  <text x="612" y="306" fill="#5b6270" font-size="13"><tspan font-weight="700" fill="#1f8a4c">+</tspan>  um nível:  peteco/<tspan font-weight="700">+</tspan>/temperatura</text>
+  <text x="612" y="330" fill="#5b6270" font-size="13"><tspan font-weight="700" fill="#1f8a4c">#</tspan>  tudo abaixo:  peteco/<tspan font-weight="700">#</tspan></text>
+
+  <text x="30" y="392" fill="#5b6270" font-size="14">O publicador não sabe quem escuta, e o assinante não sabe quem publicou. Somar uma placa não muda nada no resto.</text>
+  <text x="30" y="414" fill="#5b6270" font-size="14">Com HTTP, cada novo consumidor exigiria alguém pedindo o dado de alguém. Aqui, basta assinar o tópico.</text>
+</svg>

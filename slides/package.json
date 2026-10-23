@@ -1,0 +1,19 @@
+{
+  "name": "oficinas-esp32-peteco",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Slides das oficinas de ESP32 do PETECO (PET Engenharia de Computação, UTFPR), em Marp.",
+  "scripts": {
+    "assets": "node -e \"require('fs').cpSync('assets','build/assets',{recursive:true})\"",
+    "prehtml": "npm run assets",
+    "html": "marp --no-stdin --theme-set themes/ --allow-local-files 01-fundamentos-esp32.md -o build/01-fundamentos-esp32.html",
+    "pdf": "marp --no-stdin --theme-set themes/ --allow-local-files --pdf --pdf-notes --pdf-outlines 01-fundamentos-esp32.md -o build/01-fundamentos-esp32.pdf",
+    "pptx": "marp --no-stdin --theme-set themes/ --allow-local-files --pptx 01-fundamentos-esp32.md -o build/01-fundamentos-esp32.pptx",
+    "watch": "marp --no-stdin --theme-set themes/ --allow-local-files --watch --preview 01-fundamentos-esp32.md",
+    "server": "marp --no-stdin --theme-set themes/ --allow-local-files --server .",
+    "check": "python3 check_overflow.py 01-fundamentos-esp32.md 02-pwm-e-protocolos.md 03-freertos-flash-energia.md 04-wifi-e-iot.md"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.2"
+  }
+}

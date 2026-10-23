@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 400" width="860" height="400" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="860" height="400" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">PWM &#8212; o duty cycle define a tensão média</text>
+
+  <!-- ============ 25% ============ -->
+  <text x="30" y="72" fill="#14161a" font-size="16" font-weight="700">25%</text>
+  <text x="30" y="92" fill="#5b6270" font-size="12">LED fraco</text>
+  <line x1="110" y1="100" x2="620" y2="100" stroke="#c9cdd6" stroke-width="1"/>
+  <path d="M110 100 V60 H142 V100 H237 V60 H269 V100 H364 V60 H396 V100 H491 V60 H523 V100 H620"
+        fill="none" stroke="#14161a" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="110" y1="90" x2="620" y2="90" stroke="#c8102e" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="634" y="94" fill="#c8102e" font-size="13" font-weight="700">média 0,8 V</text>
+
+  <!-- ============ 50% ============ -->
+  <text x="30" y="172" fill="#14161a" font-size="16" font-weight="700">50%</text>
+  <text x="30" y="192" fill="#5b6270" font-size="12">meio brilho</text>
+  <line x1="110" y1="200" x2="620" y2="200" stroke="#c9cdd6" stroke-width="1"/>
+  <path d="M110 200 V160 H173 V200 H237 V160 H300 V200 H364 V160 H427 V200 H491 V160 H554 V200 H620"
+        fill="none" stroke="#14161a" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="110" y1="180" x2="620" y2="180" stroke="#c8102e" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="634" y="184" fill="#c8102e" font-size="13" font-weight="700">média 1,65 V</text>
+
+  <!-- ============ 75% ============ -->
+  <text x="30" y="272" fill="#14161a" font-size="16" font-weight="700">75%</text>
+  <text x="30" y="292" fill="#5b6270" font-size="12">quase total</text>
+  <line x1="110" y1="300" x2="620" y2="300" stroke="#c9cdd6" stroke-width="1"/>
+  <path d="M110 300 V260 H205 V300 H237 V260 H332 V300 H364 V260 H459 V300 H491 V260 H586 V300 H620"
+        fill="none" stroke="#14161a" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="110" y1="270" x2="620" y2="270" stroke="#c8102e" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="634" y="274" fill="#c8102e" font-size="13" font-weight="700">média 2,5 V</text>
+
+  <!-- marcacao de periodo -->
+  <g stroke="#1f8a4c" stroke-width="2" fill="none">
+    <path d="M110 328 V342"/>
+    <path d="M237 328 V342"/>
+    <path d="M110 335 H237"/>
+  </g>
+  <polygon points="110,335 119,331 119,339" fill="#1f8a4c"/>
+  <polygon points="237,335 228,331 228,339" fill="#1f8a4c"/>
+  <text x="249" y="340" fill="#1f8a4c" font-size="13" font-weight="700">1 período = 1 / frequência</text>
+
+  <text x="30" y="378" fill="#5b6270" font-size="14">O pino só sabe ligar e desligar. O que muda é a fração do período em que ele fica ligado &#8212;</text>
+  <text x="30" y="396" fill="#5b6270" font-size="14">rápido o bastante para o olho, o motor ou o capacitor enxergarem só a média.</text>
+</svg>

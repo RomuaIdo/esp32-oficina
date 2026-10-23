@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="880" height="420" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">Deep sleep &#8212; o consumo é o que decide a autonomia</text>
+
+  <!-- faixas sombreadas (atrás de tudo) -->
+  <rect x="90" y="70" width="188" height="154" fill="#f5c400" opacity="0.14"/>
+  <rect x="278" y="70" width="218" height="154" fill="#1f8a4c" opacity="0.10"/>
+  <rect x="496" y="70" width="189" height="154" fill="#f5c400" opacity="0.14"/>
+  <rect x="685" y="70" width="171" height="154" fill="#1f8a4c" opacity="0.10"/>
+
+  <!-- eixos e guias -->
+  <text x="82" y="85" text-anchor="end" fill="#5b6270" font-size="12">~160 mA</text>
+  <text x="82" y="149" text-anchor="end" fill="#5b6270" font-size="12">~40 mA</text>
+  <text x="82" y="222" text-anchor="end" fill="#5b6270" font-size="12">~10 µA</text>
+  <line x1="90" y1="70" x2="90" y2="224" stroke="#c9cdd6" stroke-width="2"/>
+  <line x1="90" y1="224" x2="856" y2="224" stroke="#c9cdd6" stroke-width="2"/>
+  <line x1="90" y1="80" x2="856" y2="80" stroke="#c9cdd6" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="90" y1="144" x2="856" y2="144" stroke="#c9cdd6" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- perfil de consumo -->
+  <path d="M90 224 V144 H161 V80 H217 V144 H278 V218 H496 V144 H567 V80 H623 V144 H685 V218 H856"
+        fill="none" stroke="#14161a" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- rotulos das fases -->
+  <text x="184" y="252" text-anchor="middle" fill="#8a6d00" font-size="13" font-weight="700">acordado</text>
+  <text x="184" y="270" text-anchor="middle" fill="#5b6270" font-size="12">lê, envia, grava</text>
+  <text x="184" y="286" text-anchor="middle" fill="#5b6270" font-size="12">~2 s</text>
+
+  <text x="387" y="252" text-anchor="middle" fill="#1f8a4c" font-size="13" font-weight="700">deep sleep</text>
+  <text x="387" y="270" text-anchor="middle" fill="#5b6270" font-size="12">CPU, RAM e rádio desligados</text>
+  <text x="387" y="286" text-anchor="middle" fill="#5b6270" font-size="12">~5 min</text>
+
+  <text x="590" y="252" text-anchor="middle" fill="#8a6d00" font-size="13" font-weight="700">acordado</text>
+  <text x="590" y="270" text-anchor="middle" fill="#5b6270" font-size="12">o setup() roda de novo</text>
+
+  <text x="770" y="252" text-anchor="middle" fill="#1f8a4c" font-size="13" font-weight="700">deep sleep</text>
+
+  <!-- marcador de wake -->
+  <line x1="496" y1="236" x2="496" y2="208" stroke="#c8102e" stroke-width="2"/>
+  <polygon points="496,200 490,213 502,213" fill="#c8102e"/>
+  <text x="496" y="312" text-anchor="middle" fill="#c8102e" font-size="12" font-weight="700">wake-up</text>
+  <text x="496" y="328" text-anchor="middle" fill="#c8102e" font-size="11">timer, GPIO ou toque</text>
+
+  <rect x="30" y="346" width="820" height="58" rx="8" fill="#f7f8fa" stroke="#c9cdd6" stroke-width="2"/>
+  <text x="48" y="370" fill="#14161a" font-size="14" font-weight="700">Ao acordar do deep sleep o programa recomeça pelo setup(), como se fosse um reset.</text>
+  <text x="48" y="392" fill="#5b6270" font-size="13">Só o que estiver em RTC_DATA_ATTR ou na flash sobrevive. O loop() não continua de onde parou.</text>
+</svg>

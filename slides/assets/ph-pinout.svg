@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 495" width="880" height="495" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="880" height="495" fill="#f7f8fa"/>
+  <rect x="10" y="10" width="860" height="475" fill="none" stroke="#c9cdd6" stroke-width="3" stroke-dasharray="14 10" rx="10"/>
+  <rect x="40" y="46" width="112" height="34" rx="6" fill="#f5c400"/>
+  <text x="96.0" y="69" text-anchor="middle" fill="#14161a" font-size="16" font-weight="800" letter-spacing="1.5">DIAGRAMA</text>
+  <text x="40" y="132" fill="#14161a" font-size="30" font-weight="800">Pinagem da DevKit da oficina</text>
+  <text x="40" y="168" fill="#5b6270" font-size="17" font-weight="600">SUBSTITUA ESTE ARQUIVO &#8212; conteúdo esperado:</text>
+  <text x="40" y="212" fill="#14161a" font-size="21">Diagrama de pinagem da placa que as bancadas vão usar, com os</text>
+  <text x="40" y="244" fill="#14161a" font-size="21">pinos seguros destacados em verde e os pinos a evitar (6-11,</text>
+  <text x="40" y="276" fill="#14161a" font-size="21">strapping) em vermelho.</text>
+
+  <text x="40" y="452" fill="#8b93a1" font-size="15">Arquivo: assets/ph-pinout.svg  &#183;  mantenha o mesmo nome ou ajuste o caminho no slide.</text>
+</svg>

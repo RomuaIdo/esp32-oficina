@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="880" height="420" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">A placa como servidor: cada rota devolve uma coisa</text>
+
+  <defs>
+    <marker id="sw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#14161a"/>
+    </marker>
+    <marker id="swv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f8a4c"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Navegador ===== -->
+  <rect x="30" y="92" width="168" height="200" rx="10" fill="#ffffff" stroke="#14161a" stroke-width="2.5"/>
+  <rect x="30" y="92" width="168" height="34" rx="10" fill="#14161a"/>
+  <text x="114" y="115" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">navegador</text>
+  <text x="114" y="156" text-anchor="middle" fill="#5b6270" font-size="12">celular ou notebook</text>
+  <text x="114" y="186" text-anchor="middle" fill="#1155cc" font-size="12">http://192.168.4.1</text>
+  <text x="114" y="208" text-anchor="middle" fill="#5b6270" font-size="11">ou, com mDNS:</text>
+  <text x="114" y="230" text-anchor="middle" fill="#1155cc" font-size="12">http://peteco.local</text>
+  <text x="114" y="266" text-anchor="middle" fill="#5b6270" font-size="11">nenhum app instalado</text>
+
+  <!-- ===== ESP32 ===== -->
+  <rect x="356" y="76" width="188" height="232" rx="10" fill="#14161a"/>
+  <text x="450" y="106" text-anchor="middle" fill="#f5c400" font-size="17" font-weight="700">ESP32</text>
+  <text x="450" y="126" text-anchor="middle" fill="#8b93a1" font-size="12">WebServer na porta 80</text>
+
+  <rect x="374" y="142" width="152" height="40" rx="6" fill="#2a2e37"/>
+  <text x="450" y="167" text-anchor="middle" fill="#ffffff" font-size="13">server.on("/", ...)</text>
+
+  <rect x="374" y="190" width="152" height="40" rx="6" fill="#2a2e37"/>
+  <text x="450" y="215" text-anchor="middle" fill="#ffffff" font-size="13">server.on("/api", ...)</text>
+
+  <rect x="374" y="238" width="152" height="40" rx="6" fill="#2a2e37"/>
+  <text x="450" y="263" text-anchor="middle" fill="#ffffff" font-size="13">server.on("/led", ...)</text>
+
+  <!-- setas de ida e volta -->
+  <path d="M202 162 H 352" fill="none" stroke="#14161a" stroke-width="2.5" marker-end="url(#sw)"/>
+  <text x="277" y="152" text-anchor="middle" fill="#14161a" font-size="12" font-weight="700">GET /</text>
+
+  <path d="M352 212 H 202" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#swv)"/>
+  <text x="277" y="204" text-anchor="middle" fill="#1f8a4c" font-size="12" font-weight="700">HTML da página</text>
+
+  <path d="M202 254 H 352" fill="none" stroke="#14161a" stroke-width="2.5" marker-end="url(#sw)"/>
+  <text x="277" y="246" text-anchor="middle" fill="#14161a" font-size="12" font-weight="700">GET /api</text>
+
+  <path d="M352 292 H 202" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#swv)"/>
+  <text x="277" y="284" text-anchor="middle" fill="#1f8a4c" font-size="12" font-weight="700">{"temp":23.5}</text>
+
+  <!-- ===== Origem do conteudo ===== -->
+  <rect x="622" y="92" width="228" height="68" rx="8" fill="#e7f9ef" stroke="#1f8a4c" stroke-width="2.5"/>
+  <text x="736" y="118" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">LittleFS</text>
+  <text x="736" y="140" text-anchor="middle" fill="#5b6270" font-size="12">index.html, css, imagens</text>
+  <path d="M548 162 H 585 V 126 H 618" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#swv)"/>
+
+  <rect x="622" y="178" width="228" height="68" rx="8" fill="#fffbe8" stroke="#f5c400" stroke-width="2.5"/>
+  <text x="736" y="204" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">sensor</text>
+  <text x="736" y="226" text-anchor="middle" fill="#5b6270" font-size="12">leitura do momento, em JSON</text>
+  <path d="M548 210 H 618" fill="none" stroke="#8a6d00" stroke-width="2.5" marker-end="url(#sw)"/>
+
+  <rect x="622" y="264" width="228" height="68" rx="8" fill="#fffbe8" stroke="#f5c400" stroke-width="2.5"/>
+  <text x="736" y="290" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">atuador</text>
+  <text x="736" y="312" text-anchor="middle" fill="#5b6270" font-size="12">liga o LED, move o servo</text>
+  <path d="M548 258 H 585 V 298 H 618" fill="none" stroke="#8a6d00" stroke-width="2.5" marker-end="url(#sw)"/>
+
+  <text x="30" y="370" fill="#5b6270" font-size="14">A página é servida uma vez; depois o JavaScript dela busca só o JSON de /api de tempos em tempos.</text>
+  <text x="30" y="392" fill="#5b6270" font-size="14">É assim que o painel atualiza sozinho sem recarregar &#8212; e sem gastar a RAM da placa remontando HTML.</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 470" width="860" height="470" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="860" height="470" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">SPI &#8212; três fios compartilhados, mais um CS por dispositivo</text>
+
+  <!-- Mestre -->
+  <rect x="30" y="86" width="158" height="226" rx="10" fill="#14161a"/>
+  <text x="109" y="124" text-anchor="middle" fill="#f5c400" font-size="18" font-weight="700">ESP32</text>
+  <text x="109" y="144" text-anchor="middle" fill="#8b93a1" font-size="13">mestre</text>
+  <text x="109" y="176" text-anchor="middle" fill="#ffffff" font-size="12">GPIO 18 &#183; SCK</text>
+  <text x="109" y="196" text-anchor="middle" fill="#ffffff" font-size="12">GPIO 23 &#183; MOSI</text>
+  <text x="109" y="216" text-anchor="middle" fill="#ffffff" font-size="12">GPIO 19 &#183; MISO</text>
+  <text x="109" y="248" text-anchor="middle" fill="#f5c400" font-size="12">GPIO 5 &#183; CS 1</text>
+  <text x="109" y="268" text-anchor="middle" fill="#f5c400" font-size="12">GPIO 15 &#183; CS 2</text>
+  <text x="109" y="288" text-anchor="middle" fill="#f5c400" font-size="12">GPIO 17 &#183; CS 3</text>
+
+  <!-- Barramento compartilhado -->
+  <line x1="188" y1="108" x2="820" y2="108" stroke="#14161a" stroke-width="3"/>
+  <line x1="188" y1="132" x2="820" y2="132" stroke="#14161a" stroke-width="3"/>
+  <line x1="188" y1="156" x2="820" y2="156" stroke="#14161a" stroke-width="3"/>
+  <text x="200" y="102" fill="#14161a" font-size="13" font-weight="700">SCK</text>
+  <text x="200" y="126" fill="#14161a" font-size="13" font-weight="700">MOSI</text>
+  <text x="200" y="150" fill="#14161a" font-size="13" font-weight="700">MISO</text>
+
+  <!-- ===== Dispositivo 1 ===== -->
+  <rect x="300" y="232" width="140" height="84" rx="8" fill="#ffffff" stroke="#14161a" stroke-width="2.5"/>
+  <text x="370" y="260" text-anchor="middle" fill="#14161a" font-size="15" font-weight="700">Cartão SD</text>
+  <text x="370" y="282" text-anchor="middle" fill="#5b6270" font-size="12">módulo SPI</text>
+  <text x="370" y="304" text-anchor="middle" fill="#8a6d00" font-size="13" font-weight="700">CS 1</text>
+  <g stroke="#14161a" stroke-width="2" fill="none">
+    <path d="M330 108 V232"/><path d="M350 132 V232"/><path d="M370 156 V232"/>
+  </g>
+  <circle cx="330" cy="108" r="5" fill="#14161a"/>
+  <circle cx="350" cy="132" r="5" fill="#14161a"/>
+  <circle cx="370" cy="156" r="5" fill="#14161a"/>
+
+  <!-- ===== Dispositivo 2 ===== -->
+  <rect x="490" y="232" width="140" height="84" rx="8" fill="#ffffff" stroke="#14161a" stroke-width="2.5"/>
+  <text x="560" y="260" text-anchor="middle" fill="#14161a" font-size="15" font-weight="700">Display TFT</text>
+  <text x="560" y="282" text-anchor="middle" fill="#5b6270" font-size="12">ILI9341</text>
+  <text x="560" y="304" text-anchor="middle" fill="#8a6d00" font-size="13" font-weight="700">CS 2</text>
+  <g stroke="#14161a" stroke-width="2" fill="none">
+    <path d="M520 108 V232"/><path d="M540 132 V232"/><path d="M560 156 V232"/>
+  </g>
+  <circle cx="520" cy="108" r="5" fill="#14161a"/>
+  <circle cx="540" cy="132" r="5" fill="#14161a"/>
+  <circle cx="560" cy="156" r="5" fill="#14161a"/>
+
+  <!-- ===== Dispositivo 3 ===== -->
+  <rect x="680" y="232" width="140" height="84" rx="8" fill="#ffffff" stroke="#14161a" stroke-width="2.5"/>
+  <text x="750" y="260" text-anchor="middle" fill="#14161a" font-size="15" font-weight="700">ADC externo</text>
+  <text x="750" y="282" text-anchor="middle" fill="#5b6270" font-size="12">MCP3008</text>
+  <text x="750" y="304" text-anchor="middle" fill="#8a6d00" font-size="13" font-weight="700">CS 3</text>
+  <g stroke="#14161a" stroke-width="2" fill="none">
+    <path d="M710 108 V232"/><path d="M730 132 V232"/><path d="M750 156 V232"/>
+  </g>
+  <circle cx="710" cy="108" r="5" fill="#14161a"/>
+  <circle cx="730" cy="132" r="5" fill="#14161a"/>
+  <circle cx="750" cy="156" r="5" fill="#14161a"/>
+
+  <!-- ===== Linhas de CS: saem por baixo do mestre e sobem em cada caixa ===== -->
+  <g stroke="#e0a800" stroke-width="2.5" fill="none" stroke-linejoin="round">
+    <path d="M64 312 V 352 H 400 V 316"/>
+    <path d="M104 312 V 374 H 590 V 316"/>
+    <path d="M144 312 V 396 H 780 V 316"/>
+  </g>
+  <circle cx="400" cy="316" r="4" fill="#e0a800"/>
+  <circle cx="590" cy="316" r="4" fill="#e0a800"/>
+  <circle cx="780" cy="316" r="4" fill="#e0a800"/>
+
+  <text x="30" y="436" fill="#5b6270" font-size="14">Sem endereços: o mestre escolhe com quem falar puxando para LOW o CS daquele dispositivo.</text>
+  <text x="30" y="456" fill="#5b6270" font-size="14">Mais rápido que o I2C e full-duplex, mas custa um GPIO a mais por dispositivo no barramento.</text>
+</svg>

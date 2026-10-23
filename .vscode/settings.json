@@ -1,0 +1,5 @@
+{
+  "markdown.marp.themes": ["./slides/themes/peteco.css"],
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.exportType": "pdf"
+}

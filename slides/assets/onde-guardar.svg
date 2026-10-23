@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="880" height="450" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">Onde o dado sobrevive &#8212; e a quê</text>
+
+  <!-- cabecalho das colunas de sobrevivencia -->
+  <text x="556" y="72" text-anchor="middle" fill="#5b6270" font-size="12" font-weight="700">sobrevive ao</text>
+  <text x="556" y="88" text-anchor="middle" fill="#5b6270" font-size="12" font-weight="700">deep sleep</text>
+  <text x="684" y="72" text-anchor="middle" fill="#5b6270" font-size="12" font-weight="700">sobrevive ao</text>
+  <text x="684" y="88" text-anchor="middle" fill="#5b6270" font-size="12" font-weight="700">reset</text>
+  <text x="812" y="72" text-anchor="middle" fill="#5b6270" font-size="12" font-weight="700">sobrevive a</text>
+  <text x="812" y="88" text-anchor="middle" fill="#5b6270" font-size="12" font-weight="700">desligar</text>
+
+  <!-- ============ Linha 1: RAM ============ -->
+  <rect x="30" y="104" width="460" height="62" rx="8" fill="#ffffff" stroke="#c9cdd6" stroke-width="2.5"/>
+  <text x="50" y="130" fill="#14161a" font-size="16" font-weight="700">Variável comum (RAM)</text>
+  <text x="50" y="152" fill="#5b6270" font-size="13">520 KB &#183; instantânea &#183; o que você usa o tempo todo</text>
+  <text x="556" y="143" text-anchor="middle" fill="#c8102e" font-size="22" font-weight="700">&#10007;</text>
+  <text x="684" y="143" text-anchor="middle" fill="#c8102e" font-size="22" font-weight="700">&#10007;</text>
+  <text x="812" y="143" text-anchor="middle" fill="#c8102e" font-size="22" font-weight="700">&#10007;</text>
+
+  <!-- ============ Linha 2: RTC RAM ============ -->
+  <rect x="30" y="178" width="460" height="62" rx="8" fill="#fffbe8" stroke="#f5c400" stroke-width="2.5"/>
+  <text x="50" y="204" fill="#14161a" font-size="16" font-weight="700">RTC_DATA_ATTR (RTC RAM)</text>
+  <text x="50" y="226" fill="#5b6270" font-size="13">8 KB &#183; instantânea &#183; contador de boots, estado entre sonos</text>
+  <text x="556" y="217" text-anchor="middle" fill="#1f8a4c" font-size="22" font-weight="700">&#10003;</text>
+  <text x="684" y="217" text-anchor="middle" fill="#c8102e" font-size="22" font-weight="700">&#10007;</text>
+  <text x="812" y="217" text-anchor="middle" fill="#c8102e" font-size="22" font-weight="700">&#10007;</text>
+
+  <!-- ============ Linha 3: NVS ============ -->
+  <rect x="30" y="252" width="460" height="62" rx="8" fill="#e7f9ef" stroke="#1f8a4c" stroke-width="2.5"/>
+  <text x="50" y="278" fill="#14161a" font-size="16" font-weight="700">Preferences / NVS (flash)</text>
+  <text x="50" y="300" fill="#5b6270" font-size="13">~20 KB &#183; chave-valor &#183; configuração, calibração, contadores</text>
+  <text x="556" y="291" text-anchor="middle" fill="#1f8a4c" font-size="22" font-weight="700">&#10003;</text>
+  <text x="684" y="291" text-anchor="middle" fill="#1f8a4c" font-size="22" font-weight="700">&#10003;</text>
+  <text x="812" y="291" text-anchor="middle" fill="#1f8a4c" font-size="22" font-weight="700">&#10003;</text>
+
+  <!-- ============ Linha 4: LittleFS ============ -->
+  <rect x="30" y="326" width="460" height="62" rx="8" fill="#e7f9ef" stroke="#1f8a4c" stroke-width="2.5"/>
+  <text x="50" y="352" fill="#14161a" font-size="16" font-weight="700">LittleFS (flash)</text>
+  <text x="50" y="374" fill="#5b6270" font-size="13">~1 MB &#183; arquivos &#183; log, histórico, páginas web, JSON</text>
+  <text x="556" y="365" text-anchor="middle" fill="#1f8a4c" font-size="22" font-weight="700">&#10003;</text>
+  <text x="684" y="365" text-anchor="middle" fill="#1f8a4c" font-size="22" font-weight="700">&#10003;</text>
+  <text x="812" y="365" text-anchor="middle" fill="#1f8a4c" font-size="22" font-weight="700">&#10003;</text>
+
+  <text x="30" y="422" fill="#5b6270" font-size="14">A flash tem número finito de escritas: grave configuração quando ela muda, não a cada volta do loop.</text>
+  <text x="30" y="442" fill="#5b6270" font-size="14">Precisa de muito mais que 1 MB? Cartão SD por SPI, visto na oficina 2.</text>
+</svg>
