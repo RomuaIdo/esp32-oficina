@@ -605,7 +605,7 @@ Solução: `exemplos/03d-datalogger-completo` · passo a passo em `exemplos/MONT
 | API de deep sleep | `.../api/deepsleep.html` |
 | Sistema de arquivos (LittleFS) | `.../api/fs.html` |
 | Referência do FreeRTOS | `freertos.org/a00106.html` |
-| Código desta oficina | `[LINK DO REPOSITÓRIO]` |
+| Código desta oficina | [github.com/RomuaIdo/esp32-oficina](https://github.com/RomuaIdo/esp32-oficina) |
 
 ---
 

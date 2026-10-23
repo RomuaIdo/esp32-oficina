@@ -602,7 +602,7 @@ Passo a passo e problemas comuns: `exemplos/MONTAGEM.md`
 | Migração 2.x → 3.x | `.../migration_guides/2.x_to_3.0.html` |
 | Biblioteca ESP32Servo | Library Manager → *ESP32Servo* |
 | Adafruit SSD1306 e GFX | Library Manager → *Adafruit SSD1306* |
-| Código desta oficina | `[LINK DO REPOSITÓRIO]` |
+| Código desta oficina | [github.com/RomuaIdo/esp32-oficina](https://github.com/RomuaIdo/esp32-oficina) |
 
 ---
 

@@ -721,7 +721,7 @@ Partes A a D: `exemplos/04a` a `04c` · solução com o desafio: `exemplos/04d-p
 | PubSubClient (MQTT) | `pubsubclient.knolleary.net` |
 | ArduinoJson 7 | `arduinojson.org` |
 | Mosquitto e MQTT Explorer | `mosquitto.org` · `mqtt-explorer.com` |
-| Código desta oficina | `[LINK DO REPOSITÓRIO]` |
+| Código desta oficina | [github.com/RomuaIdo/esp32-oficina](https://github.com/RomuaIdo/esp32-oficina) |
 
 ---
 

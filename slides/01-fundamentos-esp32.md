@@ -580,7 +580,7 @@ Desmonte o circuito anterior e comece do zero.
 | Migração da versão 2.x para 3.x | `.../migration_guides/2.x_to_3.0.html` |
 | Referência de pinagem | `randomnerdtutorials.com/esp32-pinout-reference-gpios/` |
 | Exemplos oficiais de cada biblioteca | `github.com/espressif/arduino-esp32` |
-| Código desta oficina | `[LINK DO REPOSITÓRIO]` |
+| Código desta oficina | [github.com/RomuaIdo/esp32-oficina](https://github.com/RomuaIdo/esp32-oficina) |
 
 ---
 
