@@ -19,6 +19,10 @@ exemplos/
 ├── 04b-servidor-web/
 ├── 04c-mqtt/
 ├── 04d-painel-completo/
+├── 05a-descobre-mac/
+├── 05b-espnow-no/
+├── 05c-ble-servidor/
+├── 05d-gateway-turma/
 ├── so-placa/                     ← demonstrações sem nenhum componente externo
 └── platformio/                   ← PlatformIO (VS Code)
     ├── 01a-primeiro-sketch/
@@ -26,7 +30,7 @@ exemplos/
     │   └── src/main.cpp
     ├── 01b-ldr-led/
     ├── ...
-    └── 04d-painel-completo/
+    └── 05d-gateway-turma/
 ```
 
 Use a que preferir. Os slides mostram a Arduino IDE, mas tudo funciona igual no PlatformIO.
@@ -66,7 +70,7 @@ pio device monitor       # monitor serial
 | Funções usadas antes de definidas | a IDE declara sozinha | declare o protótipo antes, como em C++ comum |
 | Placa e velocidade do monitor | menu *Ferramentas* | `platformio.ini` |
 | Partição para o LittleFS (03b, 03d) | *Ferramentas → Partition Scheme* | `board_build.partitions` no `platformio.ini`, já configurado |
-| Bibliotecas (Adafruit no 02c e 03d, PubSubClient no 04c e 04d) | Library Manager | `lib_deps` no `platformio.ini`, baixadas sozinhas |
+| Bibliotecas (Adafruit no 02c e 03d, PubSubClient no 04c e 04d, NimBLE no 05c) | Library Manager | `lib_deps` no `platformio.ini`, baixadas sozinhas |
 | Serial Plotter | embutido | extensão **Teleplot** do VS Code |
 
 ### Por que `pioarduino` no `platformio.ini`

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="880" height="420" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">O mesmo rádio, dois caminhos diferentes</text>
+
+  <defs>
+    <marker id="ea" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5b6270"/>
+    </marker>
+    <marker id="eb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f8a4c"/>
+    </marker>
+  </defs>
+
+  <!-- ================= Wi-Fi infraestrutura ================= -->
+  <rect x="24" y="56" width="400" height="310" rx="10" fill="#f7f8fa" stroke="#c9cdd6" stroke-width="2"/>
+  <text x="224" y="84" text-anchor="middle" fill="#14161a" font-size="17" font-weight="700">Wi-Fi comum (oficina 4)</text>
+
+  <rect x="166" y="104" width="116" height="46" rx="7" fill="#ffffff" stroke="#14161a" stroke-width="2.5"/>
+  <text x="224" y="132" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">roteador</text>
+
+  <path d="M118 212 V 176 H 212 V 154" fill="none" stroke="#5b6270" stroke-width="2" marker-end="url(#ea)"/>
+  <path d="M330 212 V 176 H 236 V 154" fill="none" stroke="#5b6270" stroke-width="2" marker-end="url(#ea)"/>
+
+  <rect x="62" y="216" width="112" height="46" rx="7" fill="#14161a"/>
+  <text x="118" y="244" text-anchor="middle" fill="#f5c400" font-size="13" font-weight="700">ESP32 A</text>
+  <rect x="274" y="216" width="112" height="46" rx="7" fill="#14161a"/>
+  <text x="330" y="244" text-anchor="middle" fill="#f5c400" font-size="13" font-weight="700">ESP32 B</text>
+
+  <text x="224" y="296" text-anchor="middle" fill="#5b6270" font-size="13">tudo passa pelo roteador</text>
+  <text x="224" y="318" text-anchor="middle" fill="#5b6270" font-size="13">cada placa precisa de IP e de senha</text>
+  <text x="224" y="340" text-anchor="middle" fill="#c8102e" font-size="13" font-weight="700">sem roteador, nada funciona</text>
+
+  <!-- ================= ESP-NOW ================= -->
+  <rect x="456" y="56" width="400" height="310" rx="10" fill="#e7f9ef" stroke="#1f8a4c" stroke-width="2.5"/>
+  <text x="656" y="84" text-anchor="middle" fill="#14161a" font-size="17" font-weight="700">ESP-NOW</text>
+
+  <rect x="598" y="104" width="116" height="46" rx="7" fill="#ffffff" stroke="#c9cdd6" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="656" y="126" text-anchor="middle" fill="#8b93a1" font-size="12">roteador</text>
+  <text x="656" y="143" text-anchor="middle" fill="#8b93a1" font-size="12">não precisa</text>
+
+  <rect x="494" y="216" width="112" height="46" rx="7" fill="#14161a"/>
+  <text x="550" y="244" text-anchor="middle" fill="#f5c400" font-size="13" font-weight="700">ESP32 A</text>
+  <rect x="706" y="216" width="112" height="46" rx="7" fill="#14161a"/>
+  <text x="762" y="244" text-anchor="middle" fill="#f5c400" font-size="13" font-weight="700">ESP32 B</text>
+
+  <path d="M610 232 H 700" fill="none" stroke="#1f8a4c" stroke-width="3" marker-end="url(#eb)"/>
+  <path d="M702 250 H 612" fill="none" stroke="#1f8a4c" stroke-width="3" marker-end="url(#eb)"/>
+  <text x="656" y="284" text-anchor="middle" fill="#1f8a4c" font-size="12" font-weight="700">direto, pelo endereço MAC</text>
+
+  <text x="656" y="312" text-anchor="middle" fill="#5b6270" font-size="13">sem IP, sem senha, sem broker</text>
+  <text x="656" y="334" text-anchor="middle" fill="#1f8a4c" font-size="13" font-weight="700">latência de poucos milissegundos</text>
+
+  <text x="30" y="398" fill="#5b6270" font-size="14">O ESP-NOW usa a camada mais baixa do mesmo rádio Wi-Fi: convive com o Wi-Fi normal, desde que no mesmo canal.</text>
+</svg>

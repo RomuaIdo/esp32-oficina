@@ -8,6 +8,7 @@ Material da série de oficinas de ESP32 do **PETECO — PET Engenharia de Comput
 | 2 | PWM, timers e protocolos (I2C, SPI) | [`02-pwm-e-protocolos.md`](slides/02-pwm-e-protocolos.md) | `exemplos/02*` |
 | 3 | FreeRTOS, memória flash e energia | [`03-freertos-flash-energia.md`](slides/03-freertos-flash-energia.md) | `exemplos/03*` |
 | 4 | Wi-Fi e IoT: servidor web, MQTT, NTP e OTA | [`04-wifi-e-iot.md`](slides/04-wifi-e-iot.md) | `exemplos/04*` |
+| 5 | ESP-NOW, BLE e como escolher a arquitetura | [`05-espnow-ble-integracao.md`](slides/05-espnow-ble-integracao.md) | `exemplos/05*` |
 
 Os PDFs dos slides ficam na página de **Releases** do repositório. Para gerar a partir do código-fonte, veja [`slides/README.md`](slides/README.md).
 
@@ -26,7 +27,7 @@ Os PDFs dos slides ficam na página de **Releases** do repositório. Para gerar 
 ```
 .
 ├── exemplos/        ← código das práticas e guia de montagem
-│   ├── 01a-…/ … 04d-…/      Arduino IDE
+│   ├── 01a-…/ … 05d-…/      Arduino IDE
 │   ├── platformio/          as mesmas práticas, para o PlatformIO
 │   ├── so-placa/            demonstrações sem componentes
 │   └── MONTAGEM.md
@@ -35,4 +36,4 @@ Os PDFs dos slides ficam na página de **Releases** do repositório. Para gerar 
 
 ## Para quem vai dar ou editar a oficina
 
-Os slides são Markdown com o tema do PETECO. Tudo o que é preciso para compilar, criar uma oficina nova e conferir se algum slide estourou a altura está em [`slides/README.md`](slides/README.md). Antes da Oficina 4, leia [`slides/preparacao-oficina-04.md`](slides/preparacao-oficina-04.md): ela depende de roteador e broker MQTT montados antes da aula.
+Os slides são Markdown com o tema do PETECO. Tudo o que é preciso para compilar, criar uma oficina nova e conferir se algum slide estourou a altura está em [`slides/README.md`](slides/README.md). As oficinas 4 e 5 dependem de preparo antes da aula (roteador, broker MQTT, MACs das placas e gateway): leia [`slides/preparacao-oficina-04.md`](slides/preparacao-oficina-04.md) e [`slides/preparacao-oficina-05.md`](slides/preparacao-oficina-05.md).

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="Inter, Segoe UI, Helvetica Neue, Arial, sans-serif">
+  <rect width="880" height="430" fill="#ffffff"/>
+  <text x="30" y="30" fill="#14161a" font-size="18" font-weight="700">A arquitetura que resolve a maioria dos projetos: nós + gateway</text>
+
+  <defs>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1f8a4c"/>
+    </marker>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#14161a"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Nós sensores ===== -->
+  <text x="110" y="70" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">nós sensores</text>
+  <text x="110" y="88" text-anchor="middle" fill="#5b6270" font-size="12">a bateria, longe da tomada</text>
+
+  <g>
+    <rect x="42" y="104" width="136" height="54" rx="8" fill="#14161a"/>
+    <text x="110" y="128" text-anchor="middle" fill="#f5c400" font-size="13" font-weight="700">ESP32 &#183; nó 1</text>
+    <text x="110" y="147" text-anchor="middle" fill="#8b93a1" font-size="11">deep sleep &#183; 10 µA</text>
+  </g>
+  <g>
+    <rect x="42" y="176" width="136" height="54" rx="8" fill="#14161a"/>
+    <text x="110" y="200" text-anchor="middle" fill="#f5c400" font-size="13" font-weight="700">ESP32 &#183; nó 2</text>
+    <text x="110" y="219" text-anchor="middle" fill="#8b93a1" font-size="11">deep sleep &#183; 10 µA</text>
+  </g>
+  <g>
+    <rect x="42" y="248" width="136" height="54" rx="8" fill="#14161a"/>
+    <text x="110" y="272" text-anchor="middle" fill="#f5c400" font-size="13" font-weight="700">ESP32 &#183; nó 3</text>
+    <text x="110" y="291" text-anchor="middle" fill="#8b93a1" font-size="11">deep sleep &#183; 10 µA</text>
+  </g>
+
+  <!-- setas ESP-NOW -->
+  <path d="M182 131 H 240 V 190 H 300" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#ag)"/>
+  <path d="M182 203 H 300" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#ag)"/>
+  <path d="M182 275 H 240 V 216 H 300" fill="none" stroke="#1f8a4c" stroke-width="2.5" marker-end="url(#ag)"/>
+  <text x="243" y="330" text-anchor="middle" fill="#1f8a4c" font-size="13" font-weight="700">ESP-NOW</text>
+  <text x="243" y="348" text-anchor="middle" fill="#5b6270" font-size="11">sem roteador</text>
+  <text x="243" y="364" text-anchor="middle" fill="#5b6270" font-size="11">acorda, envia, dorme</text>
+
+  <!-- ===== Gateway ===== -->
+  <rect x="304" y="140" width="168" height="124" rx="10" fill="#f5c400"/>
+  <text x="388" y="172" text-anchor="middle" fill="#14161a" font-size="16" font-weight="800">GATEWAY</text>
+  <text x="388" y="194" text-anchor="middle" fill="#4a4310" font-size="12">ESP32 na tomada</text>
+  <text x="388" y="216" text-anchor="middle" fill="#4a4310" font-size="12">ESP-NOW + Wi-Fi</text>
+  <text x="388" y="240" text-anchor="middle" fill="#4a4310" font-size="12">no mesmo canal</text>
+
+  <!-- seta Wi-Fi -->
+  <path d="M476 202 H 560" fill="none" stroke="#14161a" stroke-width="2.5" marker-end="url(#ah)"/>
+  <text x="518" y="192" text-anchor="middle" fill="#14161a" font-size="12" font-weight="700">Wi-Fi</text>
+
+  <!-- ===== Mundo ===== -->
+  <rect x="564" y="104" width="290" height="196" rx="10" fill="#f7f8fa" stroke="#c9cdd6" stroke-width="2"/>
+  <text x="709" y="132" text-anchor="middle" fill="#14161a" font-size="14" font-weight="700">o resto do mundo</text>
+
+  <rect x="588" y="148" width="242" height="42" rx="7" fill="#ffffff" stroke="#14161a" stroke-width="2"/>
+  <text x="709" y="174" text-anchor="middle" fill="#14161a" font-size="13">broker MQTT &#183; oficina 4</text>
+
+  <rect x="588" y="200" width="242" height="42" rx="7" fill="#ffffff" stroke="#14161a" stroke-width="2"/>
+  <text x="709" y="226" text-anchor="middle" fill="#14161a" font-size="13">painel web no celular</text>
+
+  <rect x="588" y="252" width="242" height="36" rx="7" fill="#ffffff" stroke="#14161a" stroke-width="2"/>
+  <text x="709" y="275" text-anchor="middle" fill="#14161a" font-size="13">log em arquivo &#183; oficina 3</text>
+
+  <text x="30" y="400" fill="#5b6270" font-size="14">Só o gateway lida com IP, senha e reconexão. Os nós ficam simples, baratos e duram meses em bateria.</text>
+  <text x="30" y="420" fill="#5b6270" font-size="14">Somar um nó novo não muda nada no gateway além de cadastrar o MAC dele.</text>
+</svg>

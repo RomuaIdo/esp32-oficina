@@ -17,6 +17,7 @@ Guia de bancada para todos os circuitos das oficinas. Cada seção diz o que peg
 | [9. Data logger completo](#9-data-logger-completo--prática-da-oficina-3) | 3 | `03d-datalogger-completo` |
 | [Medindo o consumo](#medindo-o-consumo) | 3 | `03c-deep-sleep` |
 | [10. Sensor + LED na rede](#10-sensor--led-na-rede--prática-da-oficina-4) | 4 | `04a-wifi-conexao` a `04d-painel-completo` |
+| [11. Nó ESP-NOW e BLE](#11-nó-esp-now-e-ble--prática-da-oficina-5) | 5 | `05a-descobre-mac` a `05d-gateway-turma` |
 
 ---
 
@@ -409,17 +410,49 @@ Na Arduino IDE, instale **PubSubClient** (de Nick O'Leary) para o `04c` e o `04d
 
 ---
 
+## 11. Nó ESP-NOW e BLE — prática da Oficina 5
+
+![Montagem de cada bancada na prática 5](../slides/assets/circuito-pratica-05.svg)
+
+**Material:** o [circuito 10](#10-sensor--led-na-rede--prática-da-oficina-4) (LDR no `GPIO 34` e LED no `GPIO 13`) mais o botão do [circuito 2](#2-botão--led--interrupção) no `GPIO 4`, direto ao GND, sem resistor (o código usa o pull-up interno).
+
+| De | Para |
+|---|---|
+| `GPIO 4` | uma perna do botão |
+| perna diagonal oposta do botão | `GND` |
+
+O **gateway** é a placa do professor e não tem montagem: é só a DevKit no USB, rodando o `05d-gateway-turma`.
+
+**Ordem da prática:**
+
+1. **`05a-descobre-mac`** em todas as placas. **Deu certo se** aparecer `MAC (copie para o codigo): ...` e a linha `Formato C: {0x.., ...}`. Anote o MAC na tabela do quadro
+2. **`05d-gateway-turma`** na placa do professor. Conecte o notebook do projetor na rede `PETECO-Gateway` (senha `oficina5esp32`) e abra `http://192.168.4.1`
+3. **`05b-espnow-no`** em cada bancada. Antes de gravar, troque `MINHA_BANCADA` (1 a 12), `MAC_GATEWAY` (o MAC que o `05d` imprime) e `MAC_VIZINHA` (o da bancada ao lado). **Deu certo se** o cartão da bancada aparecer no painel; o botão **ACENDER TODOS** do painel acender o LED; e apertar o botão de uma bancada fizer o LED da vizinha piscar
+4. **`05c-ble-servidor`**, no desafio. Troque `NOME_BLE` para o da sua bancada. **Deu certo se** a placa aparecer no app nRF Connect e a escrita de `1` acender o LED
+
+Na Arduino IDE, instale **NimBLE-Arduino** (de h2zero), versão **2.x**, para o `05c`. No PlatformIO ela já está no `platformio.ini`.
+
+**Problemas comuns**
+- O cartão da bancada não aparece no painel, sem erro nenhum: **canal**. Com `MODO_AP = true` no gateway, todos ficam no canal 1 sem fazer nada. Se o gateway estiver ligado a um roteador, os nós precisam do mesmo canal (veja o fim do `05b`)
+- `sem confirmacao de ..:..` a cada envio: `MAC_GATEWAY` digitado errado, gateway desligado ou canal diferente
+- O pulso não chega na vizinha: as duas placas precisam ter o MAC uma da outra, e a vizinha precisa estar rodando o `05b`
+- Erro *invalid conversion* no `esp_now_register_recv_cb` ou no `esp_now_register_send_cb`: código copiado de tutorial do core antigo. Os exemplos daqui já usam as assinaturas novas
+- O `05c` não compila: NimBLE 1.x instalada. Atualize para a 2.x
+- Não aparece no nRF Connect: no Android, ligue o Bluetooth **e** a localização
+
+---
+
 ## Mapa de pinos usado nas oficinas
 
 | GPIO | Uso | Circuitos |
 |---|---|---|
-| 4 | botão (entrada com pull-up interno) | 2 |
-| 13 | LED (PWM) | 1, 2, 4, 5, 10 |
+| 4 | botão (entrada com pull-up interno) | 2, 11 |
+| 13 | LED (PWM) | 1, 2, 4, 5, 10, 11 |
 | 21 | I2C SDA | 3, 5, 5b, 9 |
 | 22 | I2C SCL | 3, 5, 5b, 9 |
 | 25 | buzzer passivo (PWM) | 4 |
 | 26 | servo (PWM) | 5b |
 | 33 | botão de despertar, com pull-down externo (RTC GPIO) | 8, 9 |
-| 34 | entrada analógica, ADC1 (LDR ou potenciômetro) | 1, 4, 6, 7, 8, 9, 10 |
+| 34 | entrada analógica, ADC1 (LDR ou potenciômetro) | 1, 4, 6, 7, 8, 9, 10, 11 |
 
 Todos estão na lista de pinos seguros dos slides. Se precisar de outro para o projeto de vocês, escolha também nessa lista: `13 14 16 17 18 19 21 22 23 25 26 27 32 33` para entrada e saída, `34 35 36 39` só para entrada.

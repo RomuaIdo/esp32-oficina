@@ -9,7 +9,9 @@ slides/
 ├── 02-pwm-e-protocolos.md
 ├── 03-freertos-flash-energia.md
 ├── 04-wifi-e-iot.md
+├── 05-espnow-ble-integracao.md
 ├── preparacao-oficina-04.md     ← o que o instrutor prepara antes da Oficina 4
+├── preparacao-oficina-05.md     ← idem, Oficina 5
 ├── themes/peteco.css            ← tema visual do grupo (preto + amarelo)
 ├── assets/                      ← imagens e diagramas
 ├── scripts/                     ← geradores dos diagramas de circuito (Schemdraw)
@@ -88,17 +90,18 @@ O preview aparece ao lado do arquivo e o botão de exportar fica na paleta de co
 
 ## Imagens
 
-As fotos e prints (`foto-devkit.png`, `pinout.png`, `boards-manager.png`, `particoes.png`, `consumo-multimetro.png`) são material real. O `pagina-web-04.png` é a página do `exemplos/04b-servidor-web` renderizada no Chrome com dados de exemplo.
+As fotos e prints (`foto-devkit.png`, `pinout.png`, `boards-manager.png`, `particoes.png`, `consumo-multimetro.png`) são material real. O `pagina-web-04.png` e o `painel-turma-05.png` são as páginas do `exemplos/04b-servidor-web` e do `exemplos/05d-gateway-turma`, renderizadas no Chrome com dados de exemplo.
 
 O `ph-pinout.svg` é o único placeholder que sobrou: está lá só para o `00-template.md` mostrar como se usa uma imagem.
 
-Os diagramas de ligação das oficinas 2, 3 e 4 (`circuito-oled-i2c.svg`, `circuito-servo.svg`, `circuito-pratica-02.svg`, `circuito-pratica-03.svg` e `circuito-pratica-04.svg`) são **gerados** com [Schemdraw](https://schemdraw.readthedocs.io/). Para mudar um pino ou um rótulo, edite o script da oficina em `scripts/` e rode de novo. As peças comuns (cores do tema, bloco da ESP32, fios) ficam em `scripts/circuitos_comum.py`.
+Os diagramas de ligação das oficinas 2 a 5 (`circuito-oled-i2c.svg`, `circuito-servo.svg` e `circuito-pratica-02.svg` a `circuito-pratica-05.svg`) são **gerados** com [Schemdraw](https://schemdraw.readthedocs.io/). Para mudar um pino ou um rótulo, edite o script da oficina em `scripts/` e rode de novo. As peças comuns (cores do tema, bloco da ESP32, fios) ficam em `scripts/circuitos_comum.py`.
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install schemdraw
 .venv/bin/python scripts/circuitos_oficina2.py
 .venv/bin/python scripts/circuitos_oficina3.py
 .venv/bin/python scripts/circuitos_oficina4.py
+.venv/bin/python scripts/circuitos_oficina5.py
 ```
 
 Os dois esquemas da Oficina 1 (`circuito-ldr.svg` e `circuito-botao.svg`) foram desenhados à mão e são editáveis em qualquer editor de SVG (Inkscape, Figma) ou direto no texto.
@@ -110,7 +113,7 @@ O logo (`logo-peteco.png`) foi extraído do material do próprio grupo. Se exist
 ## Criando a próxima oficina
 
 ```bash
-cp 00-template.md 05-espnow-ble.md
+cp 00-template.md 06-nova-oficina.md
 ```
 
 O `00-template.md` traz um exemplo comentado de cada tipo de slide disponível: capa, divisória, código, tabela, duas colunas, armadilha, slide escuro, slide denso e encerramento. Ele **não entra** nos alvos `pdf` e `pptx` do Makefile, então pode ficar no repositório sem virar apresentação.
